@@ -9,6 +9,7 @@ getUserById(int? id) {
     "last_name": faker.person.lastName(),
     "about": faker.lorem.words(3).join(' '),
     "image": faker.image.image(),
+    "email":faker.internet.email(),
   };
   return user;
 }

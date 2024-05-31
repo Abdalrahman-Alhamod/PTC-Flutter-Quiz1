@@ -1,7 +1,9 @@
+import 'package:ptc_quiz1/question1/json_to_dart_extension/helpers/date_time_helper.dart';
+
 import 'address.dart';
 import 'department.dart';
 
-class Company {
+class Company with DateTimeHelper {
   int? isActive;
   String? name;
   Address? address;
@@ -35,4 +37,8 @@ class Company {
         'established': established,
         'departments': departments?.map((e) => e.toJson()).toList(),
       };
+
+  formattedDate() {
+    return formatDate(DateTime.parse(established!));
+  }
 }
